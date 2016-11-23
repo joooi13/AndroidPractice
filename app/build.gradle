@@ -5,7 +5,7 @@ android {
     buildToolsVersion "23.0.1"
 
     defaultConfig {
-        applicationId "com.example.yujoi.myapplication"
+        applicationId "com.example.joy.myapplication"
         minSdkVersion 15
         targetSdkVersion 23
         versionCode 1
@@ -20,10 +20,13 @@ android {
 }
 
 dependencies {
+
+    final SUPPORT_LIBRARY_VERSION = '23.2.1'
+
     compile fileTree(dir: 'libs', include: ['*.jar'])
     testCompile 'junit:junit:4.12'
+    compile "com.android.support:support-v4:$SUPPORT_LIBRARY_VERSION"
     compile 'com.android.support:appcompat-v7:25.0.1'
-    compile 'com.android.support:customtabs:23.0.1'
-    //noinspection GradleCompatible
+    compile 'com.android.support:customtabs:23.2.1'
     compile 'com.android.support:design:25.0.1'
 }
