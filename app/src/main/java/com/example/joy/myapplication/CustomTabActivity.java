@@ -17,11 +17,6 @@ public class CustomTabActivity extends AppCompatActivity {
 
     private String TAG = "CustomTabs";
 
-    private CustomTabsSession mCustomTabsSession;
-    private CustomTabsClient mClient;
-    private CustomTabsServiceConnection mConnection;
-    private String mPackageNameToBind;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
