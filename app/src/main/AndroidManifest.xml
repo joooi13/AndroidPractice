@@ -21,7 +21,9 @@
         </activity>
 
         <activity
-            android:name=".CustomTabActivity" />
+            android:name=".WebViewActivity" />
+        <activity
+            android:name=".ChromeCustomActivity" />
 
     </application>
 

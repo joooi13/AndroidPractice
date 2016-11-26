@@ -68,19 +68,9 @@
     <Button
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ChromeCustomTabs"
-        android:id="@+id/customTabsBtn"
-        android:layout_below="@+id/snackbarBtn"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="53dp" />
-
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="WebView"
-        android:id="@+id/webViewBtn"
+        android:text="chrome custom"
+        android:id="@+id/chrome_custom_view"
         android:layout_centerVertical="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_toRightOf="@+id/fab"
+        android:layout_toEndOf="@+id/fab" />
 </RelativeLayout>
