@@ -4,4 +4,5 @@
     <color name="accent_material_light">#ffe57f</color>
     <color name="primary_dark_material_dark">#f00dc3db</color>
     <color name="bright_foreground_material_light">#000000</color>
+    <color name="primary_material_dark">#009688</color>
 </resources>

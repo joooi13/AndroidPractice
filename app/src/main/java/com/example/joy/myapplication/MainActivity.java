@@ -1,6 +1,9 @@
 package com.example.joy.myapplication;
 
+import android.app.PendingIntent;
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.customtabs.CustomTabsIntent;
@@ -83,14 +86,41 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }).show();
         } else if (view.equals(customTabsBtn)) {
 
-            String url = "https://www.google.co.jp";
+            String url = "https://www.rakus.co.jp/";
+            final Intent intent = new Intent(Intent.ACTION_SEND)
+                    .setType("text/plain")
+                    .putExtra(Intent.EXTRA_TEXT, url);
+
+            final PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
+            final Bitmap icon = BitmapFactory.decodeResource(getResources(), R.drawable.ic_share_white_24dp);
+
             CustomTabsIntent.Builder builder = new CustomTabsIntent.Builder();
-            CustomTabsIntent customTabsIntent = builder.build();
-            customTabsIntent.launchUrl(this, Uri.parse(url));
-            builder.setToolbarColor(ContextCompat.getColor(this, R.color.primary));
+
+            setupMenu(builder);
+
+            final CustomTabsIntent tabsIntent = builder
+            .setShowTitle(true)
+                    .setToolbarColor(ContextCompat.getColor(this, R.color.primary))
+                    .setCloseButtonIcon(BitmapFactory.decodeResource(getResources(), R.drawable.ic_arrow_back_white_24dp))
+                    .enableUrlBarHiding()
+                    .setActionButton(icon, "シェア", pendingIntent).build();
+
+
+            tabsIntent.launchUrl(this,Uri.parse(url));
+
 
         } else if (view.equals(webViewBtn)) {
 
         }
+    }
+
+    // メニューの追加
+    private void setupMenu(CustomTabsIntent.Builder builder) {
+
+        Intent menuIntent = new Intent();
+        //...省略
+        PendingIntent pendingIntent = PendingIntent.getActivity(getApplicationContext(), 0, menuIntent, 0);
+
+        builder.addMenuItem("Menu Share Sample", pendingIntent);
     }
 }
