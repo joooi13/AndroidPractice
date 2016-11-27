@@ -1,6 +1,7 @@
 package com.example.joy.myapplication;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -18,9 +19,11 @@ public class WebViewActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.webview);
 
-        WebView  myWebView = (WebView)findViewById(R.id.webView);
+        String url = getIntent().getStringExtra("url");
+
+        WebView myWebView = (WebView) findViewById(R.id.webView);
         myWebView.setWebViewClient(new WebViewClient());
-        myWebView.loadUrl("https://www.rakus.co.jp/");
+        myWebView.loadUrl(url);
         myWebView.getSettings().setJavaScriptEnabled(true);
 
     }

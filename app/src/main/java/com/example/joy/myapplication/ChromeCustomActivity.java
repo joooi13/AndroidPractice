@@ -7,12 +7,11 @@ import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.customtabs.CustomTabsIntent;
-import android.support.design.widget.TextInputLayout;
 import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
-import android.widget.EditText;
+
 
 /**
  * Created by yujoi on 2016/11/26.
@@ -21,6 +20,9 @@ public class ChromeCustomActivity extends AppCompatActivity implements View.OnCl
 
     private Button customTabsBtn;
     private Button webViewBtn;
+    private Button externalBrowserBtn;
+
+    private String rakusUrl = "https://www.rakus.co.jp/";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,11 +37,13 @@ public class ChromeCustomActivity extends AppCompatActivity implements View.OnCl
     private void findById() {
         customTabsBtn = (Button) findViewById(R.id.customTabsBtn);
         webViewBtn = (Button) findViewById(R.id.webViewBtn);
+        externalBrowserBtn = (Button) findViewById(R.id.externalBrowser);
     }
 
     private void clickListener() {
         customTabsBtn.setOnClickListener(this);
         webViewBtn.setOnClickListener(this);
+        externalBrowserBtn.setOnClickListener(this);
     }
 
     @Override
@@ -47,10 +51,9 @@ public class ChromeCustomActivity extends AppCompatActivity implements View.OnCl
 
         if (view.equals(customTabsBtn)) {
 
-            String url = "https://www.rakus.co.jp/";
             final Intent intent = new Intent(Intent.ACTION_SEND)
                     .setType("text/plain")
-                    .putExtra(Intent.EXTRA_TEXT, url);
+                    .putExtra(Intent.EXTRA_TEXT, rakusUrl);
 
             final PendingIntent pendingIntent = PendingIntent.getActivity(this, 0, intent, 0);
             final Bitmap icon = BitmapFactory.decodeResource(getResources(), R.drawable.ic_share_white_24dp);
@@ -61,19 +64,23 @@ public class ChromeCustomActivity extends AppCompatActivity implements View.OnCl
 
             final CustomTabsIntent tabsIntent = builder
                     .setShowTitle(true)
-                    .setToolbarColor(ContextCompat.getColor(this, R.color.primary))
+                    .setToolbarColor(ContextCompat.getColor(this, R.color.primary_material_dark))
                     .setCloseButtonIcon(BitmapFactory.decodeResource(getResources(), R.drawable.ic_arrow_back_white_24dp))
                     .enableUrlBarHiding()
                     .setActionButton(icon, "シェア", pendingIntent).build();
 
-
-            tabsIntent.launchUrl(this, Uri.parse(url));
+            tabsIntent.launchUrl(this, Uri.parse(rakusUrl));
 
 
         } else if (view.equals(webViewBtn)) {
-
             Intent intent = new Intent(this, WebViewActivity.class);
+            intent.putExtra("url", rakusUrl);
             startActivity(intent);
+        } else if (view.equals(externalBrowserBtn)) {
+            Uri uri = Uri.parse(rakusUrl);
+            Intent intent = new Intent(Intent.ACTION_VIEW, uri);
+            startActivity(intent);
+
         }
     }
 
