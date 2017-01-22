@@ -24,6 +24,8 @@
             android:name=".WebViewActivity" />
         <activity
             android:name=".ChromeCustomActivity" />
+        <activity
+            android:name=".RecyclerViewActivity" />
 
     </application>
 

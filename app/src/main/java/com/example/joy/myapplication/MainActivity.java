@@ -56,9 +56,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
                 switch (item.getItemId()) {
-                    case R.id.chromecustomview:
-
-                        break;
+                    case R.id.sample1:
+                        return true;
+                    case R.id.sample2:
+                        return true;
+                    case R.id.sample3:
+                        return true;
+                    case R.id.sample4:
+                        return true;
+                    case R.id.sample5:
+                        return true;
                 }
                 return false;
             }

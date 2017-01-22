@@ -1,19 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/chromecustomview"
-        android:icon="@android:drawable/ic_menu_add"
-        android:title="test1" />
+        android:id="@+id/sample1"
+        android:icon="@android:drawable/ic_menu_help"
+        android:title="HELP" />
     <item
+        android:id="@+id/sample2"
         android:icon="@android:drawable/ic_menu_delete"
-        android:title="test2" />
+        android:title="DELETE" />
     <item
+        android:id="@+id/sample3"
         android:icon="@android:drawable/ic_menu_call"
-        android:title="test3" />
+        android:title="CALL" />
     <item
+        android:id="@+id/sample4"
         android:icon="@android:drawable/ic_menu_camera"
-        android:title="test4" />
+        android:title="CAMERA" />
     <item
-        android:icon="@android:drawable/ic_menu_agenda"
-        android:title="test5" />
+        android:id="@+id/sample5"
+        android:icon="@android:drawable/ic_menu_view"
+        android:title="VIEW" />
 </menu>
