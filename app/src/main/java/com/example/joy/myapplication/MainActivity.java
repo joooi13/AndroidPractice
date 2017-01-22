@@ -93,8 +93,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 }
             }).show();
         }else if(view.equals(chromeCustomForwardBtn)){
-            Intent intent = new Intent(this,ChromeCustomActivity.class);
+            Intent intent = new Intent(this,RecyclerViewActivity.class);
             startActivity(intent);
-        }
+        }/*else if(view.equals(chromeCustomForwardBtn)){
+            Intent intent = new Intent(this,RecyclerViewActivity.class);
+            startActivity(intent);
+        }*/
     }
 }

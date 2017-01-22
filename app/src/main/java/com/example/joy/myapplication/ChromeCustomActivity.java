@@ -51,6 +51,7 @@ public class ChromeCustomActivity extends AppCompatActivity implements View.OnCl
 
         if (view.equals(customTabsBtn)) {
 
+            //シェア機能の処理
             final Intent intent = new Intent(Intent.ACTION_SEND)
                     .setType("text/plain")
                     .putExtra(Intent.EXTRA_TEXT, rakusUrl);
@@ -62,6 +63,7 @@ public class ChromeCustomActivity extends AppCompatActivity implements View.OnCl
 
             setupMenu(builder);
 
+            //toolbarの色、閉じるボタン設定
             final CustomTabsIntent tabsIntent = builder
                     .setShowTitle(true)
                     .setToolbarColor(ContextCompat.getColor(this, R.color.primary_material_dark))
