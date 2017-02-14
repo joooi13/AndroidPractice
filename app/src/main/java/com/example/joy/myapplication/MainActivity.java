@@ -24,6 +24,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button snackBtn;
     private BottomNavigationView bottomNavigationView;
     private Button chromeCustomForwardBtn;
+    private Button recyclerForwardBtn;
+    private Button vectorForwardBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,14 +80,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         textInputLayout = (TextInputLayout) findViewById(R.id.text_input_message);
         mUserNameView = (EditText) findViewById(R.id.message);
         snackBtn = (Button) findViewById(R.id.snackbarBtn);
-        bottomNavigationView= (BottomNavigationView) findViewById(R.id.navigation);
-        chromeCustomForwardBtn= (Button) findViewById(R.id.chrome_custom_view);
+        bottomNavigationView = (BottomNavigationView) findViewById(R.id.navigation);
+        chromeCustomForwardBtn = (Button) findViewById(R.id.chrome_custom_view);
+        recyclerForwardBtn = (Button) findViewById(R.id.recyclerViewBtn);
+        vectorForwardBtn = (Button) findViewById(R.id.vectorBtn);
 
     }
 
     private void clickListener() {
         snackBtn.setOnClickListener(this);
         chromeCustomForwardBtn.setOnClickListener(this);
+        recyclerForwardBtn.setOnClickListener(this);
+        vectorForwardBtn.setOnClickListener(this);
     }
 
     @Override
@@ -99,12 +105,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     snackbar.dismiss();
                 }
             }).show();
-        }else if(view.equals(chromeCustomForwardBtn)){
-            Intent intent = new Intent(this,RecyclerViewActivity.class);
+        } else if (view.equals(chromeCustomForwardBtn)) {
+            Intent intent = new Intent(this, ChromeCustomActivity.class);
             startActivity(intent);
-        }/*else if(view.equals(chromeCustomForwardBtn)){
-            Intent intent = new Intent(this,RecyclerViewActivity.class);
+        } else if (view.equals(recyclerForwardBtn)) {
+            Intent intent = new Intent(this, RecyclerViewActivity.class);
             startActivity(intent);
-        }*/
+        } else if (view.equals(vectorForwardBtn)) {
+            Intent intent = new Intent(this, VectorDrawableActivity.class);
+            startActivity(intent);
+        }
     }
 }
