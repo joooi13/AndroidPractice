@@ -26,6 +26,8 @@
             android:name=".ChromeCustomActivity" />
         <activity
             android:name=".RecyclerViewActivity" />
+        <activity
+            android:name=".VectorDrawableActivity" />
 
     </application>
 

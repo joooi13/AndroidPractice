@@ -13,7 +13,7 @@
         android:id="@+id/text_input_message"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:visibility="gone"
+        android:visibility="visible"
         app:counterEnabled="true"
         app:counterMaxLength="10"
         app:counterOverflowTextAppearance="@style/counterOverride"
@@ -42,7 +42,7 @@
         android:layout_alignParentStart="true"
         android:layout_below="@+id/text_input_message"
         android:text="ACTION!"
-        android:visibility="gone" />
+        android:visibility="visible" />
 
     <android.support.design.widget.FloatingActionButton
         android:id="@+id/fab"
@@ -51,7 +51,7 @@
         android:layout_alignParentBottom="true"
         android:layout_alignParentRight="true"
         android:src="@android:drawable/ic_menu_camera"
-        android:visibility="gone"
+        android:visibility="visible"
         app:backgroundTint="@android:color/holo_red_dark" />
 
     <android.support.design.widget.BottomNavigationView xmlns:android="http://schemas.android.com/apk/res/android"
@@ -69,9 +69,34 @@
         android:id="@+id/chrome_custom_view"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_toEndOf="@+id/fab"
-        android:layout_toRightOf="@+id/fab"
         android:text="chrome custom"
-        android:visibility="gone" />
+        android:visibility="visible"
+        android:layout_below="@+id/snackbarBtn"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="33dp" />
+
+    <Button
+        android:id="@+id/vectorBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="vector"
+        android:visibility="visible"
+        android:layout_below="@+id/chrome_custom_view"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="36dp" />
+
+    <Button
+        android:id="@+id/recyclerViewBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="recycler_view"
+        android:visibility="visible"
+        android:layout_marginTop="45dp"
+        android:layout_below="@+id/vectorBtn"
+        android:layout_alignRight="@+id/chrome_custom_view"
+        android:layout_alignEnd="@+id/chrome_custom_view" />
+
+
 </RelativeLayout>
