@@ -17,6 +17,8 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import javax.inject.Inject;
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     private TextInputLayout textInputLayout;
@@ -27,10 +29,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button recyclerForwardBtn;
     private Button vectorForwardBtn;
 
+    @Inject
+    Hello mHello;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        DaggerActivityComponent.create().inject(this);
+
+        // helloと出力
+        mHello.say();
 
         findById();
         clickListener();
