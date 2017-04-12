@@ -18,6 +18,7 @@ public class ImageSampleActivity extends Activity{
 
         setContentView(R.layout.image_sample);
 
+        //Glide
         ImageView imageView = (ImageView) findViewById(R.id.img);
         Glide.with(this).load("https://goo.gl/rjX8kD").into(imageView);
     }
