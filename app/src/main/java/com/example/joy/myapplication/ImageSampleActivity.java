@@ -21,6 +21,6 @@ public class ImageSampleActivity extends Activity{
         ImageView imageView = (ImageView) findViewById(R.id.img);
         Glide.with(this).load("https://goo.gl/rjX8kD").into(imageView);
 
-        //okhttpと連携など試したい
+        //okhttpと連携など試したい！！！
     }
 }
