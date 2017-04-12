@@ -28,6 +28,8 @@
             android:name=".RecyclerViewActivity" />
         <activity
             android:name=".VectorDrawableActivity" />
+        <activity
+            android:name=".ImageSampleActivity" />
 
     </application>
 

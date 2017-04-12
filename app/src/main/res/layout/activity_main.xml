@@ -9,50 +9,94 @@
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin">
 
-    <android.support.design.widget.TextInputLayout
-        android:id="@+id/text_input_message"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:visibility="visible"
-        app:counterEnabled="true"
-        app:counterMaxLength="10"
-        app:counterOverflowTextAppearance="@style/counterOverride"
-        app:counterTextAppearance="@style/counterText"
-        app:errorEnabled="true"
-        app:hintAnimationEnabled="true"
-        app:hintEnabled="true">
+        android:layout_height="match_parent">
 
-        <EditText
-            android:id="@+id/message"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="user name"
-            android:imeOptions="actionSend"
-            android:inputType="text"
-            android:maxLines="1"
-            android:singleLine="true" />
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-    </android.support.design.widget.TextInputLayout>
+            <android.support.design.widget.TextInputLayout
+                android:id="@+id/text_input_message"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:visibility="visible"
+                app:counterEnabled="true"
+                app:counterMaxLength="10"
+                app:counterOverflowTextAppearance="@style/counterOverride"
+                app:counterTextAppearance="@style/counterText"
+                app:errorEnabled="true"
+                app:hintAnimationEnabled="true"
+                app:hintEnabled="true">
 
-    <Button
-        android:id="@+id/snackbarBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@+id/text_input_message"
-        android:text="ACTION!"
-        android:visibility="visible" />
+                <EditText
+                    android:id="@+id/message"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="user name"
+                    android:imeOptions="actionSend"
+                    android:inputType="text"
+                    android:maxLines="1"
+                    android:singleLine="true" />
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:src="@android:drawable/ic_menu_camera"
-        android:visibility="visible"
-        app:backgroundTint="@android:color/holo_red_dark" />
+            </android.support.design.widget.TextInputLayout>
+
+            <Button
+                android:id="@+id/imageSampleViewBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/text_input_message"
+                android:layout_marginTop="45dp"
+                android:text="imageSample"
+                android:visibility="visible" />
+
+            <Button
+                android:id="@+id/snackbarBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/imageSampleViewBtn"
+                android:text="ACTION!"
+                android:visibility="visible" />
+
+            <Button
+                android:id="@+id/chrome_custom_view"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/snackbarBtn"
+                android:layout_marginTop="33dp"
+                android:text="chrome custom"
+                android:visibility="visible" />
+
+            <Button
+                android:id="@+id/vectorBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_below="@+id/chrome_custom_view"
+                android:layout_marginTop="36dp"
+                android:text="vector"
+                android:visibility="visible" />
+
+            <Button
+                android:id="@+id/recyclerViewBtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignEnd="@+id/chrome_custom_view"
+                android:layout_alignRight="@+id/chrome_custom_view"
+                android:layout_below="@+id/vectorBtn"
+                android:layout_marginTop="45dp"
+                android:text="recycler_view"
+                android:visibility="visible" />
+
+        </LinearLayout>
+    </ScrollView>
 
     <android.support.design.widget.BottomNavigationView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:design="http://schema.android.com/apk/res/android.support.design"
@@ -65,38 +109,16 @@
         android:layout_gravity="bottom"
         app:menu="@menu/menu_bottom" />
 
-    <Button
-        android:id="@+id/chrome_custom_view"
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="chrome custom"
+        android:layout_above="@id/navigation"
+        android:layout_alignEnd="@+id/navigation"
+        android:layout_alignRight="@+id/navigation"
+        android:src="@android:drawable/ic_menu_camera"
         android:visibility="visible"
-        android:layout_below="@+id/snackbarBtn"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="33dp" />
-
-    <Button
-        android:id="@+id/vectorBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="vector"
-        android:visibility="visible"
-        android:layout_below="@+id/chrome_custom_view"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="36dp" />
-
-    <Button
-        android:id="@+id/recyclerViewBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="recycler_view"
-        android:visibility="visible"
-        android:layout_marginTop="45dp"
-        android:layout_below="@+id/vectorBtn"
-        android:layout_alignRight="@+id/chrome_custom_view"
-        android:layout_alignEnd="@+id/chrome_custom_view" />
+        app:backgroundTint="@android:color/holo_red_dark" />
 
 
 </RelativeLayout>

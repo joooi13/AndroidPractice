@@ -28,6 +28,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button chromeCustomForwardBtn;
     private Button recyclerForwardBtn;
     private Button vectorForwardBtn;
+    private Button imageSampleBtn;
+
 
     @Inject
     Hello mHello;
@@ -94,6 +96,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         chromeCustomForwardBtn = (Button) findViewById(R.id.chrome_custom_view);
         recyclerForwardBtn = (Button) findViewById(R.id.recyclerViewBtn);
         vectorForwardBtn = (Button) findViewById(R.id.vectorBtn);
+        imageSampleBtn = (Button) findViewById(R.id.imageSampleViewBtn);
 
     }
 
@@ -102,6 +105,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         chromeCustomForwardBtn.setOnClickListener(this);
         recyclerForwardBtn.setOnClickListener(this);
         vectorForwardBtn.setOnClickListener(this);
+        imageSampleBtn.setOnClickListener(this);
     }
 
     @Override
@@ -123,6 +127,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             startActivity(intent);
         } else if (view.equals(vectorForwardBtn)) {
             Intent intent = new Intent(this, VectorDrawableActivity.class);
+            startActivity(intent);
+        } else if(view.equals(imageSampleBtn)){
+            Intent intent = new Intent(this, ImageSampleActivity.class);
             startActivity(intent);
         }
     }
