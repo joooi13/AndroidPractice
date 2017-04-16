@@ -8,14 +8,18 @@ import android.support.design.widget.BottomNavigationView;
 import android.support.design.widget.Snackbar;
 import android.support.design.widget.TextInputLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.CardView;
 import android.text.TextUtils;
 import android.view.KeyEvent;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import javax.inject.Inject;
 
@@ -30,6 +34,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private Button vectorForwardBtn;
     private Button imageSampleBtn;
 
+    LinearLayout cardLinear;
 
     @Inject
     Hello mHello;
@@ -46,6 +51,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         findById();
         clickListener();
+
+        cardLinear = (LinearLayout)this.findViewById(R.id.card);
+        cardLinear.removeAllViews();
+
+        for(int i = 0; i< 5; i++) {
+            LayoutInflater inflater = (LayoutInflater) getSystemService(LAYOUT_INFLATER_SERVICE);
+            LinearLayout linearLayout = (LinearLayout) inflater.inflate(R.layout.card_view, null);
+            CardView cardView = (CardView) linearLayout.findViewById(R.id.cardView);
+            TextView textBox = (TextView) linearLayout.findViewById(R.id.textBox);
+            textBox.setText("CardView" + i);
+            cardView.setTag(i);
+            cardView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Toast.makeText(MainActivity.this, String.valueOf(v.getTag()) + "番目のCardViewがクリックされました", Toast.LENGTH_SHORT).show();
+                }
+            });
+            cardLinear.addView(linearLayout,i);
+        }
 
         mUserNameView.setOnEditorActionListener(new TextView.OnEditorActionListener() {
             @Override
